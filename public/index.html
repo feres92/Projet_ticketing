@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WarnTick - Gestion des Tickets</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <img src="/images/logo_warning.png" alt="Logo WarnTick" id="logo">
+    <h1>WarniTick</h1>
+    <nav>
+      <ul>
+        <li><a href="#" id="accueilLink">Accueil</a></li>
+        <li><a href="#" id="creerTicketLink">Créer un Ticket</a></li>
+        <li><a href="#" id="ticketsEnCoursLink">Tickets en cours</a></li>
+        <li><a href="#" id="voirTicketsLink">Voir tous les Tickets</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container">
+    <div id="homeSection" style="display: block;">
+      <h2>Bienvenue à WarniTick</h2>
+      <p>Gérez vos tickets avec efficacité et simplicité.</p>
+    </div>
+    <div id="ticketFormContainer" style="display: none;">
+      <h2>Création de Ticket</h2>
+      <form id="ticketForm">
+        <label for="clientName">Nom du Client:</label>
+        <input type="text" id="clientName" name="clientName" required><br>
+    
+        <label for="ticketReason">Motif du Ticket:</label>
+        <input type="text" id="ticketReason" name="ticketReason" required><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="phone">Téléphone:</label>
+        <input type="tel" id="phone" name="phone" required><br>
+    
+        <label for="ticketDate">Date:</label>
+        <input type="date" id="ticketDate" name="ticketDate" required><br>
+    
+        <label for="ticketStatus">Statut:</label>
+        <select id="ticketStatus" name="ticketStatus" required>
+          <option value="En attente">En attente</option>
+          <option value="En cours">En cours</option>
+          <option value="Résolu">Résolu</option>
+        </select><br>
+    
+        <button type="submit">Créer Ticket</button>
+      </form>
+    </div>
+    
+    <div id="ticketListTable" style="display: none;">
+      <h2>Liste des Tickets</h2>
+      <table id="ticketTable">
+        <thead>
+          <tr>
+            <th>Nom du Client</th>
+            <th>Motif du Ticket</th>
+            <th>Email</th>
+            <th>Téléphone</th>
+            <th>Date</th>
+            <th>Statut</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Les tickets seront ajoutés ici sous forme de tableau -->
+        </tbody>
+      </table>
+      <div id="pagination">
+        <button id="prevPage">Page précédente</button>
+    <button id="nextPage">Page suivante</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p id="modal-message"></p>
+    </div>
+  </div>
+
+  <script src="/js/script.js"></script> 
+</body>
+</html>
